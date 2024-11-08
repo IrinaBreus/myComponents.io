@@ -1,0 +1,176 @@
+// анимация падения снегопада animation_1
+.snow__wrap {
+    width: 100%;
+    height: 80vh;
+    background: url('../img/animation/winter2.jpg') center center / cover no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+.snow, 
+.snow::after, 
+.snow::before {
+    content: "";
+    position: absolute;
+    top: -650px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+    radial-gradient(4px 4px at 100px 50px, #fff, transparent),
+    radial-gradient(6px 6px at 200px 150px, #fff, transparent),
+    radial-gradient(3px 3px at 300px 250px, #fff, transparent),
+    radial-gradient(4px 4px at 400px 350px, #fff, transparent),
+    radial-gradient(6px 6px at 500px 100px, #fff, transparent),
+    radial-gradient(3px 3px at 50px 200px, #fff, transparent),
+    radial-gradient(4px 4px at 150px 300px, #fff, transparent),
+    radial-gradient(6px 6px at 250px 400px, #fff, transparent),
+    radial-gradient(3px 3px at 350px 500px, #fff, transparent);
+    background-size: 650px 650px;
+    animation: snowAnim 6s linear infinite;
+}
+
+.snow::after {
+    margin-left: -220px;
+    opacity: .5;
+    filter: blur(2px);
+    animation-direction: reverse;
+    animation-duration: 9s;
+}
+.snow::before {
+    margin-left: -330px;
+    opacity: .7;
+    filter: blur(1px);
+    animation-direction: reverse;
+    animation-duration: 12s;
+}
+
+@keyframes snowAnim{
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(650px);
+    }
+}
+
+// анимированный фон animation_2
+.field {
+    background: #111;
+    position: relative;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    &__wrapper {
+        span {
+            position: absolute;
+            bottom: -180px;
+            height: 50px;
+            width: 50px;
+            z-index: -1;
+            background-color: #18191f;
+            box-shadow: 0 0 50px #0072ff,
+                        0 0 100px #0072ff,
+                        0 0 150px #0072ff,
+                        0 0 200px #0072ff;
+            animation: animateBox 10s linear infinite;
+            &:nth-child(1) {
+                left: 60px;
+                animation-delay: .6s;
+            }
+            &:nth-child(2) {
+                left: 10%;
+                animation-delay: 7s;
+                width: 60px;
+                height: 60px;
+                box-shadow: 0 0 50px #74ddcd,
+                            0 0 100px #74ddcd,
+                            0 0 150px #74ddcd,
+                            0 0 200px #74ddcd;
+            }
+            &:nth-child(3) {
+                left: 20%;
+                animation-delay: 2s;
+                box-shadow: 0 0 50px #c266dc,
+                            0 0 100px #c266dc,
+                            0 0 150px #c266dc,
+                            0 0 200px #c266dc;
+            }
+            &:nth-child(4) {
+                left: 30%;
+                animation-delay: 5s;
+                width: 80px;
+                height: 80px;
+            }
+            &:nth-child(5) {
+                left: 40%;
+                animation-delay: 1s;
+            }
+            &:nth-child(6) {
+                left: 50%;
+                animation-delay: 7s;
+                box-shadow: 0 0 50px #c266dc,
+                            0 0 100px #c266dc,
+                            0 0 150px #c266dc,
+                            0 0 200px #c266dc;
+            }
+            &:nth-child(7) {
+                left: 60%;
+                animation-delay: 4s;
+                width: 100px;
+                height: 100px;
+                box-shadow: 0 0 50px #74ddcd,
+                            0 0 100px #74ddcd,
+                            0 0 150px #74ddcd,
+                            0 0 200px #74ddcd;
+            }
+            &:nth-child(8) {
+                left: 70%;
+                animation-delay: 8s;
+            }
+            &:nth-child(9) {
+                left: 80%;
+                animation-delay: 2s;
+                width: 90px;
+                height: 90px;
+                box-shadow: 0 0 50px #c266dc,
+                            0 0 100px #c266dc,
+                            0 0 150px #c266dc,
+                            0 0 200px #c266dc;
+            }
+            &:nth-child(10) {
+                left: 90%;
+                animation-delay: 6s;
+            }
+        }
+    }
+    &__banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        z-index: 10;
+    }
+    &__title {
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: #fff;
+        font-size: 80px;
+        text-transform: uppercase;
+        letter-spacing: 12px;
+    }
+}
+
+@keyframes animateBox {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    80% {
+        opacity: .7;
+    }
+    100% {
+        bottom: 0;
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}
