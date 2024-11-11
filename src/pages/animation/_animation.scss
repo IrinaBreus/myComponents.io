@@ -174,3 +174,164 @@
         opacity: 0;
     }
 }
+
+// Трехцветный слайдер animation-3
+.colors-fields {
+    width: 100%;
+    height: 100vh;
+    .colors-field {
+        width: calc(100% / 3);
+        height: 100vh;
+        overflow: hidden;
+        cursor: pointer;
+        float: left;
+        transition: all .6s ease-in-out;
+        h4::before {
+            content: "";
+            display: block;
+            top: 50%;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            transform: rotate(350deg) translateY(-50%);
+            transition: all 1.5s;
+        }
+        &__blue {
+            background: #3d97e6;
+            h4::before {
+                background: url('../../img/animation/blade.png') center center / contain no-repeat;
+            }
+        }
+        &__red {
+            background: #ec5f5f;
+            h4::before {
+                background: url('../../img/animation/argenty.png') center center / contain no-repeat;
+            }
+        }
+        &__yellow {
+            background: #f7d35c;
+            h4::before {
+                background: url('../../img/animation/jzin.png') center center / contain no-repeat;
+            }
+        }
+        &__title {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            font-weight: 700;
+            text-transform: uppercase;
+            overflow: hidden;
+            position: relative;
+            color: #fff;
+            white-space: nowrap;
+            transition: all 1.5s ease-in-out;
+        }
+    }
+    .colors-field_active {
+        width: 100%;
+        .colors-field__title {
+            font-size: 80px;
+            transform: translateY(20%);
+            &::before {
+                top: 5%;
+                transform: rotate(370deg) scale(1.3);
+            }
+        }
+    }
+    .colors-field_no-active {
+        width: 0;
+    }
+}
+
+.animation-4 {
+    width: 100%;
+    padding: 40px;
+    min-height: 100vh;
+    background: #171149;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    &__card {
+        position: relative;
+        width: 240px;
+        height: 240px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all .5s;
+        &:hover {
+            transform: rotate(-15deg);
+            .animation-4__content {
+                transform: rotate(20deg);
+                scale: 1;
+                opacity: 1;
+            }
+        }
+    }
+    &__img {
+        position: absolute;
+        inset: 0;
+        border-radius: 12px;
+        border: 4px solid rgba(0, 0, 0, .2);
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all .5s;
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+    &__content {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(#fff2, transparent);
+        border: 1px solid rgba(255, 255, 255, .1);
+        box-shadow: 0 25px 25px rgba(0, 0, 0, .25);
+        backdrop-filter: blur(15px);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex-direction: column;
+        padding: 20px;
+        transition: all .5s;
+        scale: 0;
+        opacity: 0;
+    }
+    &__title, &__text {
+        display: block;
+        width: 100%;
+        color: #fff;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    &__title {
+        font-size: 1.5rem;
+        text-align: center;
+        letter-spacing: .1em;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+    &__text {
+        font-size: 1rem;
+        text-align:left;
+        line-height: 160%;
+        span {
+            font-style: italic;
+            font-weight: 700;
+        }
+    }
+}

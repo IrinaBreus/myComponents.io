@@ -1,9 +1,7 @@
-import calcScroll from './modules/calcScroll';
-import scrollUp from './modules/scrollUp';
+import animation3 from '../pages/animation/animation';
 
 document.addEventListener('DOMContentLoaded', () => {
 'use stricti';
 
-scrollUp();
-calcScroll();
+animation3();
 });
