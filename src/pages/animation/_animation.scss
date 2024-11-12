@@ -335,3 +335,44 @@
         }
     }
 }
+
+// Интерактивный счетчик
+.counter {
+    width: 100%;
+    min-height: 50vh;
+    background: #171149;
+    padding: 20px;
+    &__wrapper {
+        display: flex;
+        min-height: 50vh;
+        align-items: center;
+        justify-content: space-around;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    &__card {
+        width: 280px;
+        background: #3b285d;
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 10px;
+        border-bottom: 10px solid #0072ff;
+        color: #fff;
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    &__num {
+        font-size: 40px;
+        font-weight: 700;
+    }
+    &__descr {
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
