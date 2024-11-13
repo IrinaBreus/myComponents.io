@@ -1,6 +1,7 @@
 @use 'base/style';
 @forward 'base/*';
+@forward 'blocks/*';
 
 // @forward 'blocks/*';
 @use '../pages/animation/animation';
-@use '../pages/accordeon/accordeon';
+@use '../pages/accordion/accordion';

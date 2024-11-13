@@ -1,0 +1,175 @@
+.lib {
+    display: grid;
+    grid-template: repeat(2, max-content) / repeat(2, 1fr);
+    gap: 40px;
+    &__wrapper {
+        position: relative;
+        transform-style: preserve-3d;
+        perspective: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        transition: 500ms;
+        &:hover {
+            gap: 20px;
+            .lib__item {
+                transform: translate3d(100px, 0 ,0);
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+    }
+    &__item {
+        position: relative;
+        width: 360px;
+        height: 50px;
+        padding: 16px;
+        background: #fff;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 12px rgba(0, 0, 0, .24);
+        transition: all 500ms;
+        transition-delay: calc(var(--i) * 50ms);
+        &:nth-child(1) {
+            transform: translate3d(100px, 50px, -50px);
+            opacity: .3;
+            filter: blur(7px);
+        }
+        &:nth-child(2) {
+            transform: translate3d(100px, 30px, -10px);
+            opacity: .4;
+            filter: blur(6px);
+        }
+        &:nth-child(3) {
+            transform: translate3d(100px, 10px, 30px);
+            opacity: .5;
+            filter: blur(5px);
+        }
+        &:nth-child(4) {
+            transform: translate3d(100px, -10px, 60px);
+            opacity: .6;
+            filter: blur(4px);
+        }
+        &:nth-child(5) {
+            transform: translate3d(100px, -30px, 90px);
+            opacity: .7;
+            filter: blur(3px);
+        }
+        &:nth-child(6) {
+            transform: translate3d(100px, -50px, 120px);
+            opacity: .8;
+            filter: blur(2px);
+        }
+        &:nth-child(7) {
+            transform: translate3d(100px, -70px, 140px);
+            opacity: .9;
+            filter: blur(1px);
+        }
+        &:nth-child(8) {
+            transform: translate3d(100px, -90px, 160px);
+            opacity: 1;
+            filter: blur(0);
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .lib {
+        &__item {
+            width: 260px;
+            height: 46px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .lib {
+        &__item {
+            padding: 10px;
+            width: 240px;
+            &:nth-child(1) {
+                transform: translate3d(50px, 50px, -50px);
+            }
+            &:nth-child(2) {
+                transform: translate3d(50px, 30px, -10px);
+            }
+            &:nth-child(3) {
+                transform: translate3d(50px, 10px, 30px);
+            }
+            &:nth-child(4) {
+                transform: translate3d(50px, -10px, 60px);
+            }
+            &:nth-child(5) {
+                transform: translate3d(50px, -30px, 90px);
+            }
+            &:nth-child(6) {
+                transform: translate3d(50px, -50px, 120px);
+            }
+            &:nth-child(7) {
+                transform: translate3d(50px, -70px, 140px);
+            }
+            &:nth-child(8) {
+                transform: translate3d(50px, -90px, 160px);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .lib {
+        display: grid;
+        grid-template: repeat(4, max-content) / 1fr;
+        gap: 0;
+        &__wrapper {
+            position: relative;
+            transform-style: none;
+            perspective: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0;
+            transition: 0s;
+            &:hover {
+                gap: 10px;
+                .lib__item {
+                    transform: translate3d(0, 0 ,0);
+                    opacity: 1;
+                    filter: blur(0);
+                }
+            }
+        }
+        &__item {
+            position: relative;
+            width: 360px;
+            height: 50px;
+            padding: 16px;
+            transition: all 0s;
+            transition-delay: 0;
+            gap: 10px;
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6),
+            &:nth-child(7),
+            &:nth-child(8) {
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .lib {
+        &__item {
+            width: 280px;
+            height: 42px;
+            padding: 10px;
+        }
+    }
+}

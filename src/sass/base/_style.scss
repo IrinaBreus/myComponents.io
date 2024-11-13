@@ -9,7 +9,11 @@
     --black: #000000;
     --white: #FFFFFF;
 }
-
+.body-index {
+    min-height: 100vh;
+    background: #03001e;
+    background: linear-gradient(45deg, #6407a1, #cc3ea6);
+}
 a {
     text-decoration: none;
 }
@@ -17,6 +21,10 @@ ul, ol[class] {
     list-style: none;
 }
 
+h1 {
+    text-align: center;
+    margin: 40px auto;
+}
 h3 {
     text-align: center;
     color: rgb(31, 29, 172);

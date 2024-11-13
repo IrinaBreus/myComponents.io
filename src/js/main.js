@@ -1,3 +1,4 @@
+import accordion from '../pages/accordion/accordion';
 import animation3 from '../pages/animation/animation3';
 import counter from '../pages/animation/counter';
 
@@ -6,4 +7,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 animation3();
 counter();
+accordion();
 });
