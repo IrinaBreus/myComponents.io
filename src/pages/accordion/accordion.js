@@ -10,7 +10,7 @@
 //     })
 // }
 
-// привключении одного, все остальные закроются
+// при клике на вопрос, ответ под ним откроется, все остальные закроются
 const accordion = () => {
     const contents = document.querySelectorAll('.accordion-2__content');
     const triggers = document.querySelectorAll('.accordion-2__header');
