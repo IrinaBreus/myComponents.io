@@ -1,0 +1,283 @@
+// неизменяемые звезды рейтинга
+
+.stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+
+    display: inline-block;
+    line-height: 1;
+    font-size: 18px;
+    margin-bottom: 6px;
+    
+    &::before {
+        content: '★★★★★';
+        background: linear-gradient(90deg, #ffcc00 var(--percent), #d6d6d6 var(--percent));
+        background-clip: text;
+        color: transparent;
+        letter-spacing: 3px;
+    }
+}
+
+
+// изменяемые звезды с использование svg
+.full-stars {
+    text-align: left;
+}
+.full-stars .rating-group {
+    display: inline-flex;
+}
+.full-stars input {
+    position: absolute;
+    left: -100%;
+}
+.full-stars label {
+    margin: 0;
+    cursor: pointer;
+}
+.full-stars label svg {
+    margin: 2px;
+    height: 20px;
+    width: 20px;
+    fill: #ffcc00;
+    transition: fill 0.3s;
+}
+.full-stars input:checked ~ label svg {
+    fill: #d6d6d6;
+}
+.full-stars .rating-group:hover label svg {
+    fill: #ffcc00;
+}
+.full-stars .rating-group input:hover ~ label svg {
+    fill: #d6d6d6;
+}
+
+
+// Простая система оценок отзывов пользователей c использованием стандартных символов
+// символы можно подставить из любой библиотеки 
+:root {
+    --primary: #181736;
+    --secondary: #252549;
+    --text-color: #fff;
+}
+
+// обертка
+.rating-fields {
+    min-height: 100vh;
+    background-color: var(--primary);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h4 {
+        margin-bottom: 40px;
+        color: var(--text-color);
+    }
+}
+
+// блок с динамичным рейтингом
+.rating {
+    width: 75vw;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    color: var(--text-color);
+    &__average {
+        width: 30%;
+        background-color: var(--secondary);
+        padding: 16px;
+        border-radius: 4px;
+        text-align: center;
+    }
+    &__star-num {
+        font-size: 48px;
+    }
+    &__star-outer {
+        position: relative;
+        font-size: 28px;
+        display: inline-block;
+        &::before {
+            // спецсимволы
+            // content: '\2605 \2605 \2605 \2605 \2605';
+            // color: #ffffff88;
+            
+            // svg-иконка
+            content: '';
+            background: url('../../icons/star.svg') left top space;
+            width: 116px;
+            height: 28px;
+            left: 0;
+            top: 0;
+            display: inline-block;
+        }
+    }
+    &__star-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        &::before {
+            // спецсимволы
+            // content: '\2605 \2605 \2605 \2605 \2605';
+            // color: rgb(255, 215, 0);
+            
+            // svg-иконка
+            content: '';
+            background: url('../../icons/star-active.svg') left top space;
+            width: 116px;
+            height: 28px;
+            left: 0;
+            top: 0;
+            display: inline-block;
+        }
+
+    }
+    &__star-txt {
+        margin-top: 12px;
+        letter-spacing: 2px;
+    }
+    &__progress {
+        width: 70%;
+    }
+    &__progress-value {
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        column-gap: 8px;
+    }
+    &__star {
+        span {
+            font-size: 20px;
+            color: gold;
+        }
+    }
+    &__progress-bar {
+        flex: 1 1 0;
+        height: 8px;
+        background-color: gold;
+        background-color: #ff02;
+        border-radius: 8px;
+    }
+    &__progress-item {
+        border-radius: 8px;
+        height: 100%;
+        background-color: gold;
+    }
+    &__progress-txt {
+        width: 10%;
+    }
+}
+
+// Оценка с отправкой данных на сервер
+.form-rating {
+    color: white;
+}
+// простой рейтинг без js
+.simple-rating {
+    position: relative;
+    font-size: 40px;
+    display: inline-block;
+    &::before {
+        content: '★★★★★';
+        display: block;
+    }
+    &__items {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row-reverse;
+        overflow: hidden;
+    }
+    &__item {
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        &:checked,
+        &:checked ~ .simple-rating__label {
+            color: #ffd300;
+        }
+    }
+    &__label {
+        flex: 0 0 20%;
+        height: 100%;
+        cursor: pointer;
+        color: #ffffff;
+        &::before {
+            content: '★';
+            display: block;
+            transition: color .3s ease 0s;
+        }
+        &:hover,
+        &:hover ~ .simple-rating__label,
+        &:checked ~ .simple-rating__label:hover {
+            color: #ffcc00;
+        }
+    }
+}
+
+.rating-2 {
+    display: flex;
+    align-items: flex-end;
+    font-size: 40px;
+    line-height: 0.75;
+    color: white;
+    transition: opacity .6s ease .2s;
+    &__body{
+        position: relative;
+        &::before {
+            content: '★★★★★';
+            display: block;
+        }
+    }
+    &__active{
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        &::before {
+            content: '★★★★★';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            color: #ffd300;
+        }
+        
+    }
+    &__items{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    &__item {
+        flex: 0 0 20%;
+        height: 100%;
+        opacity: 0;
+    }
+    &__value{
+        font-size: 50%;
+        line-height: 1;
+        padding: 0 0 0 10px;
+    }
+    
+}
+.rating-2.rating-2_set .rating-2__active,
+.rating-2.rating-2_set .rating-2__item {
+    cursor: pointer;
+}
+.rating-2_sending {
+    opacity: .2;
+    transition: opacity .6s ease .2s;
+}
