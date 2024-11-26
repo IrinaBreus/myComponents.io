@@ -1,25 +1,32 @@
-const counter = () => {
+const circleBar = () => {
     try {
-        const parent = document.querySelector('.counter'),
-            cardsNum = document.querySelectorAll('.counter__num');
+        const parent = document.querySelector('.circular'),
+              infoNum = parent.querySelectorAll('.circular__value'),
+              circles = parent.querySelectorAll('.circular__item');
 
         // для работы самого счетчика
-        let interval = 4000;
+        let interval = 2000;
         let oneTime = false;
+
+        // для разноцветных диаграм
+        let color = ['#E80F88', '#0fe837', '#0f9ce8'];
         
         function moveCounter() {
-            cardsNum.forEach(num => {
+            infoNum.forEach((num, i) => {
                 let startValue = 0,
-                    endValue = num.dataset.count,
+                    endValue = parseFloat(num.textContent),
                     duration = Math.floor(interval / endValue);
-                
+                    
                 let counter = setInterval(() => {
                     startValue += 1;
-                    num.textContent = startValue;
+                    num.textContent = `${startValue}%`;
         
                     if (startValue == endValue) {
                         clearInterval(counter);
                     }
+                    // для диаграмм одного цвета, ставим color основной, для разных, создаем массив с цветами
+                    circles[i].style.background = `conic-gradient(${color[i]} ${startValue * 3.6}deg, #ededed 0deg)`;
+                    
                 }, duration);
             })
             oneTime = true;
@@ -37,4 +44,4 @@ const counter = () => {
     } catch {}
 }
 
-export default counter;
+export default circleBar;

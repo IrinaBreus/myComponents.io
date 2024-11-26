@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Счетчики</title>
+    <link rel="stylesheet" href="../../css/style.min.css">
+    <script src="../../js/script.js" defer></script>
+</head>
+<body>
+    <a href="../../index.html">Назад</a>
+    <!-- Счетчик -->
+    <h3>Интерактивный счетчик</h3>
+    <div class="counter">
+        <div class="counter__wrapper">
+            <div class="counter__card">
+                <div class="counter__title">Заголовок</div>
+                <div class="counter__num" data-count="100">100</div>
+                <div class="counter__descr">Описание</div>
+            </div>
+            <div class="counter__card">
+                <div class="counter__title">Заголовок</div>
+                <div class="counter__num" data-count="500">500</div>
+                <div class="counter__descr">Описание</div>
+            </div>
+            <div class="counter__card">
+                <div class="counter__title">Заголовок</div>
+                <div class="counter__num" data-count="20">20</div>
+                <div class="counter__descr">Описание</div>
+            </div>
+            <div class="counter__card">
+                <div class="counter__title">Заголовок</div>
+                <div class="counter__num" data-count="367">367</div>
+                <div class="counter__descr">Описание</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- с использованием JS -->
+    <h3>Полоса прогресса</h3>
+    <div class="line-bar">
+        <div class="line-bar__item">
+            <div class="line-bar__info">
+                <p>info 1</p>
+                <p class="line-bar__num"><span>90</span>%</p>
+            </div>
+            <div class="line-bar__bg">
+                <div class="line-bar__scale" style="width: 90%">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="line-bar__item">
+            <div class="line-bar__info">
+                <p>info 2</p>
+                <p class="line-bar__num"><span>70</span>%</p>
+            </div>
+            <div class="line-bar__bg">
+                <div class="line-bar__scale" style="width: 70%">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="line-bar__item">
+            <div class="line-bar__info">
+                <p>info 3</p>
+                <p class="line-bar__num"><span>50</span>%</p>
+            </div>
+            <div class="line-bar__bg">
+                <div class="line-bar__scale" style="width: 50%">
+                    <span></span>
+                </div>            
+            </div>
+        </div>
+        <div class="line-bar__item">
+            <div class="line-bar__info">
+                <p>info 4</p>
+                <p class="line-bar__num"><span>30</span>%</p>
+            </div>
+            <div class="line-bar__bg">
+                <div class="line-bar__scale" style="width: 30%">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="line-bar__item">
+            <div class="line-bar__info">
+                <p>info 5</p>
+                <p class="line-bar__num"><span>18</span>%</p>
+            </div>
+            <div class="line-bar__bg">
+                <div class="line-bar__scale" style="width: 18%">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Круговая диаграмма прогресса -->
+     <h3>Круговая диаграмма прогресса</h3>
+     <div class="circular">
+        <div class="circular__item">
+            <div class="circular__inner">
+                <span class="circular__value">36%</span>
+            </div>
+        </div>
+        <div class="circular__item">
+            <div class="circular__inner">
+                <span class="circular__value">64%</span>
+            </div>
+        </div>
+        <div class="circular__item">
+            <div class="circular__inner">
+                <span class="circular__value">85%</span>
+            </div>
+        </div>
+     </div>
+</body>
+</html>

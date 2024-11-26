@@ -1,0 +1,121 @@
+// Интерактивный счетчик
+.counter {
+    width: 100%;
+    min-height: 50vh;
+    background: #171149;
+    padding: 20px;
+    &__wrapper {
+        display: flex;
+        min-height: 50vh;
+        align-items: center;
+        justify-content: space-around;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    &__card {
+        width: 280px;
+        background: #3b285d;
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 10px;
+        border-bottom: 10px solid #0072ff;
+        color: #fff;
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    &__num {
+        font-size: 40px;
+        font-weight: 700;
+    }
+    &__descr {
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+
+.line-bar {
+    background: #171149;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 30px;
+    &__item {
+        width: 300px;
+        color: #fff;
+
+    }
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+    }
+    &__bg {
+        width: 100%;
+        height: 10px;
+        border-radius: 25px;
+        background-color: #d9d9d91c;
+        position: relative;
+    }
+    &__scale {
+        position: absolute;
+        height: 10px;
+        border-radius: 25px;
+        background-color: transparent;
+        top: 0;
+        left: 0;
+        span {
+            width: 0;
+            height: 100%;
+            left: 0;
+            top: 0;
+            display: block;
+            border-radius: 25px;
+            background-color: #ffffff;
+            transition: width 4s ease-in-out;
+        }
+    }
+}
+
+.circular {
+    background: #171149;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    color: #fff;
+    &__item {
+        width: 210px;
+        height: 210px;
+        background: conic-gradient(#0f9ce8 3.6deg, #ededed 0deg);
+        box-shadow: 0 0 8px 3px #f8f8f866;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__inner {
+        width: 190px;
+        height: 190px;
+        background: #171149;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: inset 0 0 5px 2px #f8f8f866;
+    }
+    &__value {
+        font-size: 40px;
+        font-weight: 500;
+    }
+}
