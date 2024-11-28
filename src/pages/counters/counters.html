@@ -99,21 +99,48 @@
     <!-- Круговая диаграмма прогресса -->
      <h3>Круговая диаграмма прогресса</h3>
      <div class="circular">
-        <div class="circular__item">
-            <div class="circular__inner">
-                <span class="circular__value">36%</span>
+         <div class="circular__item">
+             <div class="circular__inner">
+                 <span class="circular__value">36%</span>
+                </div>
+            </div>
+            <div class="circular__item">
+                <div class="circular__inner">
+                    <span class="circular__value">64%</span>
+                </div>
+            </div>
+            <div class="circular__item">
+                <div class="circular__inner">
+                    <span class="circular__value">85%</span>
+                </div>
             </div>
         </div>
-        <div class="circular__item">
-            <div class="circular__inner">
-                <span class="circular__value">64%</span>
+        
+        
+        <!-- Круговая диаграмма прогресса с использованием svg -->
+        <h3>Круговая диаграмма прогресса с использованием svg</h3>
+        <div class="circle">
+            <div class="circle__wrapper">
+                <div class="circle__outer">
+                    <div class="circle__inner">
+                        <div class="circle__num">75%</div>
+                    </div>
+                </div>
             </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 version="1.1"
+                 width="160px"
+                 height="160px"
+                >
+                <defs>
+                    <lineargradient id="GradientColor">
+                        <stop offset="0%" stop-color="#ff0000" />
+                        <stop offset="100%" stop-color="#112f81" />
+                    </lineargradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+            </svg>
         </div>
-        <div class="circular__item">
-            <div class="circular__inner">
-                <span class="circular__value">85%</span>
-            </div>
-        </div>
-     </div>
 </body>
 </html>

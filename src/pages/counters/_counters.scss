@@ -119,3 +119,65 @@
         font-weight: 500;
     }
 }
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: #e3edf7;
+    position: relative;
+    &__wrapper {
+        width: 160px;
+        height: 160px;
+        position: relative;
+    }
+    &__outer {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(255, 255, 255, .7);
+        padding: 20px;
+    }
+    &__inner {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+                        inset -4px -4px 10px -1px rgba(255, 255, 255, .7),
+                        -0.05px -0.5px 0 rgba(255, 255, 255, 1),
+                        .5px 0.5px 0 rgba(0, 0, 0, .15),
+                        0 12px 10px -10px rgba(0, 0, 0, .05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    }
+    &__num {
+        font-size: 20px;
+        font-weight: 600;
+        color: #112f81;
+    }
+    circle {
+        fill: none;
+        stroke: url(#GradientColor);
+        stroke-width: 20px; //размер padding .circle__outer
+        stroke-dasharray: 440;
+        stroke-dashoffset: 0;
+        animation: anim 2s linear forwards;
+    }
+
+    svg {
+        position: absolute;
+    }
+}
+
+@keyframes anim {
+    0% {
+        stroke-dashoffset: 440;
+    }
+    100% {
+        stroke-dashoffset: 110;
+        // stroke-dashoffset: 440 - 440 * .75 
+    }
+}

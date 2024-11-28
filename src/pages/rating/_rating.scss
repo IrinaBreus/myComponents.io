@@ -171,6 +171,14 @@
 // Оценка с отправкой данных на сервер
 .form-rating {
     color: white;
+    &__label {
+        color: #d6d6d6;
+    }
+    &__btn {
+        cursor: pointer;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
 }
 // простой рейтинг без js
 .simple-rating {

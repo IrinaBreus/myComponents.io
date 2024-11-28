@@ -1,0 +1,224 @@
+// часы
+.clock {
+    // внешний вид часов
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../../img/clock.png') center center / cover no-repeat;
+    border: 4px solid #091921;
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, .05),
+                inset 0 -15px 15px rgba(255, 255, 255, .05),
+                0 15px 15px rgba(0, 0, 0, .3),
+                inset 0 15px 15px rgba(0, 0, 0, .3);
+    // кружочек в центре
+    &::before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: #fff;
+        border-radius: 50%;
+        z-index: 100;
+    }
+    // стрелки
+    &__hour,
+    &__min,
+    &__sec {
+        position: absolute;
+    }
+    &__hour,
+    &__hour-arr {
+        width: 160px;
+        height: 160px;
+    }
+    &__min,
+    &__min-arr {
+        width: 190px;
+        height: 190px;
+    }
+    &__sec,
+    &__sec-arr {
+        width: 230px;
+        height: 230px;
+    }
+    &__hour-arr,
+    &__min-arr,
+    &__sec-arr {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        border-radius: 50%;
+    }
+    &__hour-arr::before {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 80px;
+        background: #ff105e;
+        border-radius: 6px 6px 0 0;
+        z-index: 10;
+    }
+    &__min-arr::before {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 90px;
+        background: #fff;
+        border-radius: 6px 6px 0 0;
+        z-index: 11;
+    }
+    &__sec-arr::before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 150px;
+        background: #fff;
+        border-radius: 6px 6px 0 0;
+        z-index: 12;
+    }
+}
+
+.timer {
+    background: #000;
+    color: #f0f0f0;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    &__wrapper {
+        display: flex;
+        gap: 20px;
+    }
+    &__item {
+        width: 80px;
+        height: 80px;
+        border: 2px solid rgb(34, 16, 138);
+        position: relative;
+        &:not(:last-child) {
+            &::before {
+                content: ":";
+                position: absolute;
+                right: -16px;
+                font-size: 36px;
+                line-height: 72px;
+                animation: tik-tak 1s infinite;
+            }
+        }
+        span {
+            display: block;
+            padding: 12px 0 6px;
+            font-size: 32px;
+            font-weight: 700;
+        }
+    }
+}
+
+@keyframes tik-tak {
+    0% {
+        opacity: .2;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: .2;
+    }
+}
+// Календарь
+.calendar {
+    width: 100%;
+    padding: 60px 40px;
+    background: #F1FDFF;
+    &__header {
+        width: 100%;
+        height: 60px;
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        margin-bottom: 30px;
+    }
+    &__btn {
+        width: 40px;
+        height: 40px;
+        background: #f0f0f0;
+        border-radius: 50%;
+        color: #333;
+        font-size: 25px;
+        line-height: 40px;
+        text-align: center;
+    }
+    &__months {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+    &__month {
+        width: 280px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
+    }
+    &__month-header {
+        margin-bottom: 10px;
+    }
+    &__month-title {
+        font-size: 18px;
+        color: #4070f4;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+    ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        li {
+            width: calc(100% / 7);
+            font-size: 14px;
+            padding: 8px 0;
+            border: 1px solid transparent;
+        }
+        li.calendar__today {
+            border: 1px solid #4070f4;
+            box-shadow: inset 0 0 4px 1px rgb(129, 203, 243);
+        }
+    }
+    &__weeks {
+        font-weight: 600;
+        margin-bottom: 10px;
+        li {
+            color: #999;
+            &:nth-child(6),
+            &:nth-child(7) {
+                color: rgb(210, 82, 82);
+            }
+        }
+    }
+    &__days {
+        li {
+            color: #333;
+            &:nth-child(6),
+            &:nth-child(7),
+            &:nth-child(13),
+            &:nth-child(14),
+            &:nth-child(20),
+            &:nth-child(21),
+            &:nth-child(27),
+            &:nth-child(28),
+            &:nth-child(34),
+            &:nth-child(35) {
+                color: rgb(210, 82, 82);
+            }
+        }
+    }
+        
+}
