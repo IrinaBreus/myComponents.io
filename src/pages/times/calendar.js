@@ -17,12 +17,14 @@ const calendar = () => {
 
 		getCalendar();
 
-		btnPrev.addEventListener('click', () => {
+		btnPrev.addEventListener('click', (e) => {
+			e.preventDefault();
 			currentYear = currentYear - 1;
 			changeCalendar(currentYear);
 		});
 		
-		btnNext.addEventListener('click', () => {
+		btnNext.addEventListener('click', (e) => {
+			e.preventDefault();
 			currentYear = currentYear + 1;
 			changeCalendar(currentYear);
 		})

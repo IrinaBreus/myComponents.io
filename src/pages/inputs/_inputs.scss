@@ -1,0 +1,162 @@
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.checkbox-1 {
+    padding: 20px;
+    &__label {
+        margin-bottom: 25px;
+        display: block;
+        position: relative;
+        padding-left: 20px;
+    }
+    &__inpt {
+        // кросбраузерные свойства чтобы спрятать инпут
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        &:checked + .checkbox-1__style::before{
+            opacity: 1;
+        }
+        &:disabled + .checkbox-1__style{
+            border: 2px solid #ccc;
+        }
+        &:checked:disabled + .checkbox-1__style::before{
+            background: #ccc;
+        }
+        &:focus + .checkbox-1__style {
+            box-shadow: 0 0 0 2px #000;
+        }
+    }
+    &__style {
+        // для стилизцации 
+        width: 16px;
+        height: 16px;
+        border: 2px solid #0EA36E;
+        position: absolute;
+        margin-left: -20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #0EA36E;
+            opacity: 0;
+            transition: opacity .3s;
+        }
+    }
+}
+.checkbox-2 {
+    padding: 20px;
+    &__label {
+        margin-bottom: 25px;
+        display: block;
+        position: relative;
+        padding-left: 20px;
+        z-index: 1;
+    }
+    &__inpt {
+        // кросбраузерные свойства чтобы спрятать инпут
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        &:checked + .checkbox-2__style::before{
+            opacity: 1;
+        }
+        &:disabled + .checkbox-2__style{
+            border: 2px solid #ccc;
+        }
+        &:checked:disabled + .checkbox-2__style::before{
+            opacity: .5;
+        }
+        &:focus + .checkbox-2__style {
+            box-shadow: 0 0 0 2px #000;
+        }
+    }
+    &__style {
+        // для стилизцации 
+        width: 16px;
+        height: 16px;
+        border: 2px solid #0EA36E;
+        position: absolute;
+        margin-left: -20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1;
+        &::before {
+            content: '';
+            background: url('../../icons/check.svg') center center no-repeat;
+            position: absolute;
+            width: 18px;
+            height: 17px;
+            top: -5px;
+            left: 0px;
+            z-index: 10;
+            opacity: 0;
+        }
+    }
+}
+
+.checkbox-3 {
+    padding: 20px;
+    &__label {
+        margin-bottom: 25px;
+        display: block;
+        position: relative;
+        padding-left: 20px;
+    }
+    &__inpt {
+        // кросбраузерные свойства чтобы спрятать инпут
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        &:checked + .checkbox-3__style::before{
+            opacity: 1;
+        }
+        &:disabled + .checkbox-3__style{
+            border: 2px solid #ccc;
+        }
+        &:checked:disabled + .checkbox-3__style::before{
+            background: #ccc;
+        }
+        &:focus + .checkbox-3__style {
+            box-shadow: 0 0 0 2px #000;
+        }
+    }
+    &__style {
+        // для стилизцации 
+        width: 16px;
+        height: 16px;
+        border: 2px solid #0EA36E;
+        position: absolute;
+        margin-left: -20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 50%;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #0EA36E;
+            opacity: 0;
+            transition: opacity .3s;
+            border-radius: 50%;
+        }
+    }
+}

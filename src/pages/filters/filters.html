@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильтры</title>
+    <link rel="stylesheet" href="../../css/style.min.css">
+    <script src="../../js/script.js" defer></script>
+</head>
+<body>
+    <a href="../../index.html">Назад</a>
+    
+   
+    <h3>Список пользователей с возможностью поиска, добавления, удаления и пагинацией</h3>
+
+    <!-- обертка для задания общего стиля -->
+    <div class="filter-1__container"> 
+        <!-- обертка для задания стиля фильтру -->
+        <div class="filter-1">
+            <header>
+                <div class="filter-1__filter-entries">
+                    <!-- Число пользователей на стр -->
+                    <div class="filter-1__entries"> 
+                        Show <select name="" id="table_size">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+    
+                    <div class="filter-1__filter">
+                        <label for="search">Search: </label>
+                        <input type="search" name="" id="search" placeholder="Введите имя/город/дата">
+                    </div>
+                </div>
+    
+                <div class="filter-1__add-member-btn">
+                    <button>Новый пользователь</button>
+                </div>
+            </header>
+
+            <table class="filter-1__table" >
+                <thead>
+                    <tr class="filter-1__table-heading">
+                        <th>№</th>
+                        <th>Фото</th>
+                        <th>ФИО</th>
+                        <th>Возраст</th>
+                        <th>Город</th>
+                        <th>Профессия</th>
+                        <th>З/п</th>
+                        <th>Дата регистрации</th>
+                        <th>Email</th>
+                        <th>Тел.</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="filter-1__empty" colspan="11" align="center">В таблице еще нет данных</td>
+                    </tr>
+                    <!-- <tr>
+                        <td>1</td>
+                        <td><img src="../../img/people/none.png" alt=""></td>
+                        <td>Петр Иванов</td>
+                        <td>30</td>
+                        <td>Порт-Петровск</td>
+                        <td>Графический дизайнер</td>
+                        <td>25 000&#8381;</td>
+                        <td>03-08-2020</td>
+                        <td>petrptrr@gmail.com</td>
+                        <td>222333666</td>
+                        <td>
+                            <button><img src="../../icons/eye.svg" alt=""></button>
+                            <button><img src="../../icons/edit.svg" alt=""></button>
+                            <button><img src="../../icons/trash.svg" alt=""></button>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+
+            <div class="filter-1__footer">
+                <span>Показано от 1 до 10 из 50</span>
+                <div class="filter-1__pagination">
+                    <button>&larr;</button>
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>&rarr;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- форма добавления пользователя -->
+         <div class="filter-1__dark-bg">
+            <div class="filter-1__popup">
+                <header>
+                    <h2 class="filter-1__modal-title">Заполните форму</h2>
+                    <button class="filter-1__close-btn">&times;</button>
+                </header>
+                <div class="filter-1__form-wrapper">
+                    <form action="#" class="filter-1__form" id="myForm">
+                        <div class="filter-1__img-holder">
+                            <div class="filter-1__form-img">
+                                <img src="../../img/people/none.svg" alt="none">
+                            </div>
+                            <label for="uploadimg" class="filter-1__upload">
+                                <input type="file" id="uploadimg" class="filter-1__picture">
+                                <span>+</span>
+                            </label>
+                        </div>
+                        <div class="filter-1__inputs-container">
+                            <div class="filter-1__name-field">
+                                <div class="filter-1__form-control">
+                                    <label for="fName">Имя: </label>
+                                    <input type="text" id="fName" required>
+                                </div>
+                                <div class="filter-1__form-control">
+                                    <label for="lName">Фамилия: </label>
+                                    <input type="text" id="lName" required>
+                                </div>
+                            </div>
+                            <div class="filter-1__age-city-field">
+                                <div class="filter-1__form-control">
+                                    <label for="age">Возраст: </label>
+                                    <input type="number" id="age" required>
+                                </div>
+
+                                <div class="filter-1__form-control">
+                                    <label for="city">Город: </label>
+                                    <input type="text" id="city" required>
+                                </div>
+                            </div>
+
+                            <div class="filter-1__post-salary-field">
+                                <div class="filter-1__form-control">
+                                    <label for="position">Профессия: </label>
+                                    <input type="text" id="position" required>
+                                </div>
+
+                                <div class="filter-1__form-control">
+                                    <label for="salary">З/п: </label>
+                                    <input type="number" id="salary" required>
+                                </div>
+                            </div>
+
+                            <div class="filter-1__form-control">
+                                <label for="sDate">Дата: </label>
+                                <input type="вфеу" id="sDate" required>
+                            </div>
+
+                            <div class="filter-1__form-control">
+                                <label for="email">Email: </label>
+                                <input type="email" id="email" required>
+                            </div>
+
+                            <div class="filter-1__form-control">
+                                <label for="phone">Тел: </label>
+                                <input type="number" id="phone" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <footer class="filter-1__popup-footer">
+                    <button form="myForm" class="filter-1__submit">Отправить</button>
+                </footer>
+            </div>
+         </div>
+    </div>
+
+
+</body>
+</html>
