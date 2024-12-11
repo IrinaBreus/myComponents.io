@@ -212,7 +212,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transform: scale(.75);
         opacity: 0;
         visibility: hidden;
     }
@@ -220,6 +219,7 @@
         border-radius: 5px;
         box-shadow: 3px 3px 20px rgba(0, 0, 0, .3);
         background: var(--dark6);
+        transform: scale(.7);
         transition: .4s;
         user-select: none;
         header {

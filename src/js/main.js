@@ -5,6 +5,7 @@ import animation5 from '../pages/animation/animation5';
 import circleBar from '../pages/counters/circleBar';
 import counter from '../pages/counters/counter';
 import lineBar from '../pages/counters/lineBar';
+import filter1 from '../pages/filters/filter1';
 import rating from '../pages/rating/rating';
 import calendar from '../pages/times/calendar';
 import clock from '../pages/times/clock';
@@ -30,4 +31,6 @@ circleBar();
 calendar();
 clock();
 timer();
+
+filter1();
 });
